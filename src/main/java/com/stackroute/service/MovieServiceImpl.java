@@ -84,7 +84,7 @@ public class MovieServiceImpl implements MovieService, ApplicationListener<Conte
     //movie by name
     @Override
     public Movie getMovieByName(String movieTitle) throws MovieNotFoundException {
-        Movie movie=movieRepository.getMovieByName(movieTitle);
+        Movie movie=movieRepository.findMovieByMovieTitle(movieTitle);
         if (movie==null)
         {
             throw new MovieNotFoundException("No movie found with MovieTitle "+movieTitle);
